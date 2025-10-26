@@ -172,3 +172,94 @@ max-width: 900px;
 .navbar-nav .dropdown-toggle::after { border-color: var(--teal); } /* Teal arrow */
 
 footer { color: var(--teal); text-align: center; padding: 10px; }
+
+/* Mobile Responsiveness - Under 768px (covers tablets, phones) */
+@media (max-width: 768px) {
+  /* Shrink main logo image further for mobile */
+  .navbar-brand img {
+    width: 280px !important; /* Overrides 250px from line 33; tweak to 260px if needed */
+    max-height: 120px !important; /* Caps height to avoid dominating viewport */
+  }
+
+  /* Move hamburger toggler away from right edge */
+  .navbar-toggler {
+    margin-right: 15px; /* Adds buffer from screen edge for easier taps */
+    padding: 0.25rem 0.5rem; /* Slightly larger tap target (44px accessibility) */
+  }
+
+  /* Tighten navbar padding */
+  .navbar {
+    padding: 0.5rem 1rem; /* Less top/bottom padding for compact nav */
+  }
+
+  /* Compact content spacing */
+  .content {
+    padding: 16px; /* Reduce from 24px (line 80) for mobile */
+    margin: 10px; /* Slight edge buffer */
+  }
+
+  /* Smooth leaderboard table scroll */
+  .leaderboard .table-responsive {
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+    overflow-x: auto;
+  }
+
+  .leaderboard .table {
+    font-size: 0.8rem; /* Slightly smaller than 0.85rem (line 112) */
+    min-width: 300px; /* Prevents column squish */
+  }
+
+  .leaderboard .table th,
+  .leaderboard .table td {
+    padding: 6px 4px; /* Tighter than 8px (line 116) */
+    white-space: nowrap; /* Avoids text wrapping */
+  }
+
+  /* Upcoming races list and button */
+  .event-placeholder ul li {
+    margin: 8px 0; /* Tighter than 10px (line 107) */
+    font-size: 0.9rem; /* Compact but readable */
+  }
+
+  .btn-primary {
+    min-height: 44px; /* Thumb-friendly tap target */
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Extra Polish for Flagship Phones - Under 428px (e.g., iPhone 14 Pro Max) */
+@media (max-width: 428px) {
+  /* Even smaller logo for narrow screens */
+  .navbar-brand img {
+    width: 240px !important; /* Smaller than 280px above */
+    max-height: 100px !important;
+  }
+
+  /* Center navbar elements */
+  .container.text-center.d-flex.flex-column.align-items-center {
+    gap: 0.5rem; /* Small gap between logo and toggler */
+  }
+
+  /* Ultra-compact content */
+  .content {
+    padding: 12px;
+    margin: 5px;
+  }
+
+  /* Leaderboard for tiny screens */
+  .leaderboard .table {
+    font-size: 0.75rem;
+    min-width: 280px;
+  }
+}
+
+/* General Mobile Body - All <768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem; /* Slight readability boost */
+  }
+
+  .main-wrapper {
+    overflow-x: hidden; /* No horizontal scroll jank */
+  }
+}
