@@ -1,0 +1,60 @@
+:root {
+  --dark-grey: #374151; /* Track-inspired dark grey */
+  --teal: #26A69A; /* Subtler teal for pop */
+}
+body {
+  background-color: var(--dark-grey);
+  color: #fff;
+}
+.navbar-dark {
+  background-color: var(--dark-grey) !important;
+  border-bottom: 2px solid var(--teal);
+}
+.navbar-brand img {
+  width: 800px;  /* Double native width for bigger presence—test 250-350px */
+  height: auto;  /* Maintains aspect ratio, no distortion */
+  max-height: 300px;  /* Caps if it overflows nav height */
+  object-fit: contain;  /* Keeps sharp edges, no crop/stretch */
+  filter: brightness(1.1) contrast(1.05);  /* Subtle boost to mesh with darker grey bg—makes blues/teals glow without overkill */
+}
+.nav-link, .dropdown-item {
+  color: var(--teal) !important;
+}
+.nav-link:hover, .dropdown-item:hover {
+  color: #fff !important;
+  background-color: var(--teal) !important;
+}
+.dropdown-menu {
+  background-color: var(--dark-grey);
+  border: 1px solid var(--teal);
+  z-index: 1000;
+}
+main {
+  background-color: #1F2937;
+  padding: 20px;
+  border-radius: 8px;
+}
+.text-teal {
+  color: var(--teal);
+}
+.btn-primary {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background-color: #fff;
+  color: var(--dark-grey);
+}
+.event-placeholder ul {
+  list-style: none;
+  padding: 0;
+}
+.event-placeholder li {
+  color: #fff;
+  margin: 10px 0;
+}
+
+.dropdown-menu { min-width: 120px; } /* Prevents narrow dropdowns */
+.navbar-nav .dropdown-toggle::after { border-color: var(--teal); } /* Teal arrow */
+
+footer { color: var(--teal); text-align: center; padding: 10px; }
